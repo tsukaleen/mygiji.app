@@ -1,0 +1,2 @@
+module GijiHelper
+end

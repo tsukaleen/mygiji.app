@@ -1,0 +1,63 @@
+<% if user_signed_in? %> <!-- ユーザーがログインしているか調べる -->
+  <!-- ユーザーがログインしていた時の処理 -->
+<div class="main-page">
+<div class="container">
+<div class="welcome">
+  <p> ようこそ<%= current_user.name %>さん！一緒に思い出を振り返りましょう </p>
+
+<%= form_tag(search_giji_index_path, :method => "get") do %>
+ <%= text_field_tag :search %> 
+<%= submit_tag "検索する" , :text => nil ,class: "button is-info"%> 
+<% end %> 
+</div>
+
+
+<!--議事録情報-->
+
+
+ <% @gijis.each do |giji| %>
+ <div class="card border-dark mb-5 mt-5" style="max-width: 40rem;">
+  <div class="card-header">
+   <ul class="list">
+     <li><%= link_to '詳細', "/giji/#{giji.id}", class: 'list', method: :get %></li>
+          <% if user_signed_in? && current_user.id == giji.user_id %>
+      <li><%= link_to '編集', "giji/#{giji.id}/edit", class: 'list', method: :get %></li>
+      <li><%= link_to '削除', "/giji/#{giji.id}", class: 'list', method: :delete %></li>
+    </ul>
+           <% end %>
+  </div>
+  <div class="card-body text-dark">
+    <p class="card-text"><%= simple_format(giji.text) %></p>
+  </div>
+  <div class="card-footer bg-transparent border-dark">
+  <p>投稿者：<%= giji.user.name %></p>
+  <p><%= giji.created_at %></p>
+  <p><%= giji.image %></p>
+  </div>
+</div>
+<% end %>
+
+<%= paginate(@gijis) %>
+</div>
+ 
+  <!-- ログアウトをする -->
+<% else %>
+  <!-- ユーザーがログインしていなかった時の処理 -->
+<div class="top">  
+ <div class="container1">
+  　　   <div class="sign_up_logo">
+  　　    　<img src="/assets/logo.png" alt="ロゴ" class="logo">
+       </div>
+      
+    　 <div class="button-top">
+    　　<button type="button" class="btn1 btn-lg btn-primary"><%= link_to "ログイン", new_user_session_path, class: 'post',:style=>"color:white;" %> </button><!-- ログイン画面に移行する -->
+        <button type="button" class="btn2 btn-lg btn-outline-primary"><%= link_to "新規登録", new_user_registration_path, class: 'post' %></button> <!-- 新規登録画面に移行する -->
+  　　   </div>
+</div> 
+</div>
+<% end %>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->

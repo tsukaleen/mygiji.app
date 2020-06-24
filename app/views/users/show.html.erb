@@ -1,0 +1,34 @@
+<div class="mypage">
+<div class="container">
+  <div class="welcome">
+   <h3> ･:*+.<%= @name %>さんの思い出議事録･:*+</h3>
+　</div>
+  
+ 
+  <% @gijis.each do |giji| %>
+   <div class="card border-dark mb-5 mt-5" style="max-width: 40rem;">
+    <div class="card-header">
+      <ul class="list">
+         <li><%= link_to '詳細', "/giji/#{giji.id}", class: 'list', method: :get %></li>
+          <% if user_signed_in? && current_user.id == giji.user_id %>
+         <li><%= link_to '編集', "giji/#{giji.id}/edit", class: 'list', method: :get %></li>
+         <li><%= link_to '削除', "/giji/#{giji.id}", class: 'list', method: :delete %></li>
+      </ul>
+      <% end %>
+    </div>
+         
+ 
+  <div class="card-body text-dark">
+    <p class="card-text"><%= simple_format(giji.text) %></p>
+  </div>
+  <div class="card-footer bg-transparent border-dark">
+    <p><%= giji.created_at %></p>
+    <p><%= giji.image %></p>
+  </div>
+</div>
+  <% end %>
+
+<%= paginate(@gijis) %>
+</div>
+</div>
+</div>

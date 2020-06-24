@@ -1,0 +1,60 @@
+ <div class="details">
+
+<div class="container">
+  　　  
+  　　       <div class="card border-dark mb-5 mt-5" style="max-width: 40rem;">
+             <div class="card-header">
+               <ul>
+                 <li>★︎この日の思い出★</li>
+               </ul>
+              </div>
+        
+           <div class="card-body text-dark">
+            <p class="card-text"><%= simple_format(@giji.text) %></p>
+          </div>
+          
+          <div class="card-footer bg-transparent border-dark">
+        　<p>投稿者：<%= @giji.user.name %></p>
+             <p><%= @giji.created_at %></p>
+          </div>
+       
+ </div>   
+     
+    
+   
+    <!--コメント-->
+  <div class="comments">   
+      <h4>＝コメント＝</h4>
+      <% if @comments %>
+        <% @comments.each do |comment| %>
+        <div class="yourcomments">
+          <p>
+            <strong><%= link_to comment.user.name, "/users/#{comment.user_id}" %>：</strong>
+            <%= comment.text %>
+          </p>
+        </div>
+        <% end %>
+      <% end %>
+
+  
+  
+    <!-- ここからフォーム -->
+    <div class="form-group">
+    <% if current_user %>
+      <%= form_tag("/giji/#{@giji.id}/comments", method: :post) do %>
+      <div class="form-group">
+        <textarea name="text" placeholder="コメントする" rows="2" cols="40"></textarea>
+      </div>
+        <div class="form-group">
+        <button type="submit" class="btn-sticky">送る</button>
+        </div>
+      <% end %>
+    <% end %>
+    </div>
+
+  </div>
+
+  
+ 
+</div>
+</div>

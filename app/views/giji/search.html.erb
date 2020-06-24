@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="welcome">
+    <h3>◆◇検索結果◇◆</h3>
+    </div>
+    
+<table>
+  <thead>
+    <tr>
+      <th>議事録一覧</th>
+    </tr>
+  </thead>
+  
+   <% @gijis.each do |giji| %>
+  <tbody>
+  
+   <div class="card border-dark mb-5 mt-5" style="max-width: 40rem;">
+  <div class="card-header">
+   <ul class="list">
+    <li><%= link_to '詳細', "/giji/#{giji.id}", class: 'list', method: :get %></li>
+          <% if user_signed_in? && current_user.id == giji.user_id %>
+      <li><%= link_to '編集', "/giji/#{giji.id}/edit", class: 'list', method: :get %></li>
+      <li><%= link_to '削除', "/giji/#{giji.id}", class: 'list', method: :delete %></li>
+  　</ul>
+  　 <% end %>
+  </div>
+  　 <div class="card-body text-dark">
+       <p class="card-text"><%= simple_format(giji.text) %></p>
+    </div>
+    <div class="card-footer bg-transparent border-dark">
+      <p>投稿者：</p><%= giji.user.name %></p>
+      <p><%= giji.created_at %></p>
+    </div>
+  </tbody>
+ 
+ <% end %>
+</table>
+ 
+</div>

@@ -1,0 +1,296 @@
+@import url(//fonts.googleapis.com/css?family=Montserrat);
+* {
+  font-family: Montserrat, "游ゴシック体", "Yu Gothic", YuGothic, "ヒラギノ角ゴ Pro W6", "HIragino Kaku Gothic Pro W6", "HIragino Kaku Gothic Pro", Osaka, "ＭＳ Ｐゴシック", "MS P Gothic", sans-serif !important;
+}
+
+html,body {
+  height: 100%;
+}
+
+.container a{
+  text-decoration: none;
+}
+
+.container a:hover{
+  color: #CC3366;
+}
+.container1 a{
+  text-decoration: none;
+}
+//********トップ画面*********
+.top {
+background-image: url(topimage.jpg);
+background-position: center center;
+background-size: cover;
+height: 100vh;
+display: block;
+
+}
+
+.sign_up_logo {
+  margin-top: 100px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.logo {
+  padding: 10px;
+}
+
+.button-top {
+  text-align: center;
+  margin-top: 120px;
+  display: flex;
+}
+
+
+.btn1 {
+  margin-right: 40px;
+  margin-left: auto;
+ 
+}
+
+.btn2 {
+  margin-right: auto;
+  margin-left: 40px;
+  
+}
+
+
+//********ログイン・新規作成**********
+
+.regist_back {
+  background-image: url(topimage.jpg);
+background-position: center center;
+background-size: cover;
+height: 100vh;
+display: block;
+}
+
+.sign_up_site {
+  width: 100%;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sign_up_contents {
+  margin-right: auto;
+  margin-left: auto;
+  width: 500px;
+  color: #003366;
+  background: #d6ebff;
+  box-shadow: 0px 0px 0px 10px #d6ebff;
+  border: dashed 2px white;
+}
+
+.sign_up_contents h2{
+  font-size: 25px;
+}
+
+//*********ヘッダー*********
+.navbar a{
+  color: #000044;
+}
+
+.title {
+  font-size: 40px;
+  font-weight: bolder; 
+}
+
+.navbar-nav {
+  font-size: 16px;
+}
+
+.nav-item {
+  margin: 10px;
+}
+
+.collapse {
+  margin: 10px;
+
+  
+}
+
+//*********メイン画面**********
+.main-page {
+  background-image: url(cute.png);
+  background-color:rgba(255,255,255,0.6);
+  background-blend-mode:lighten;
+  background-position: center center;
+background-size: cover;
+}
+
+.welcome {
+ margin-right: auto;
+ margin-left: auto;
+ padding-top: 50px;
+ text-align: center;
+}
+
+.card {
+  margin-right: auto;
+ margin-left: auto;
+}
+
+.card-header {
+  text-align: left;
+}
+
+ul {
+  list-style: none;
+  margin: 1px;
+  height: 20px;
+  padding-left: 0px;
+  
+}
+
+li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.list {
+  color: #006633;
+}
+
+.card-footer p{
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 0px;
+}
+
+//************マイページ画面**********
+.mypage {
+  background-image: url(background.png);
+  background-position: center center;
+  background-size: cover;
+}
+
+//**********投稿画面****************
+.new {
+  background-image: url(sakura.png);
+background-position: center;
+background-size: cover;
+height: 100vh;
+display: block;
+}
+
+.contents h3{
+  margin-right: auto;
+ margin-left: auto;
+ padding-top: 50px;
+ text-align: center;
+}
+
+.form-group {
+  padding-top: 10px;
+  margin: 10 auto;
+  text-align: center;
+}
+
+button.btn-sticky {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: 0;
+  border-radius: 0;
+  background: #cccccc;
+  display: inline-block;
+  padding: 0.5em 2em;
+  text-decoration: none;
+  background: #FFDBC9;
+  border-left: solid 6px #FF5F17;/*左線*/
+  color: #FF5F17;/*文字色*/
+  font-weight: bold;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+}
+
+//*************詳細画面*************
+.details {
+  background-image: url(star.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  display: block;
+}
+
+.comments {
+  width: 640px;
+  text-align: center;
+  padding: auto;
+  margin: auto;
+}
+
+.comments a{
+  color: #0000BB;
+}
+
+.yourcomments {
+  width: 382px;
+  text-align: left;
+}
+
+.card-header li{
+  color: #006633;
+}
+
+//******スマホ用******
+@media only screen and (max-width: 767px) {
+  //********トップ画面*********
+.sign_up_logo {
+ text-align: center;
+ margin-top: 170px;
+  }
+  
+.button-top {
+  margin-top: 100px;
+}
+
+.btn1 {
+  margin-right: 10px;
+  margin-left: auto;
+ 
+}
+
+.btn2 {
+  margin-right: auto;
+  margin-left: 10px;
+  
+}
+
+ //********ヘッダー*********
+ .title {
+  font-size: 20px;
+}
+
+.navbar-nav {
+  font-size: 10px;
+}
+
+.nav-item {
+  margin: 5px;
+}
+
+//********投稿画面*********
+.form-group {
+  padding-top: 10px;
+  margin: 10 auto;
+  text-align: center;
+}
+textarea[name="text"] {
+  display: inline-block;
+  width: 100%;
+  height: 200px;
+}
+
+
+//********詳細画面*********
+.comments {
+  width: 100%;
+  text-align: center;
+  padding: auto;
+  margin: auto;
+}
+}

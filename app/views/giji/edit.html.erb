@@ -1,0 +1,21 @@
+<div class="new">
+<div class="container">
+
+  <div class="welcome">
+    <h3>
+      編集する
+    </h3>
+  </div>
+  
+   <div class="form-group">
+    <%= form_tag("/giji/#{@gijis.id}", method: :patch ) do %>
+     <div class="form-group">
+    <textarea name="text" placeholder="text" rows="15" cols="50"><%= @gijis.text %></textarea>
+    </div>
+     <div class="form-group">
+    <button type="submit" class="btn-sticky">編集完了</button>
+    </div>
+  <% end %>
+
+</div>
+</div>
