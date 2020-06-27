@@ -75,6 +75,7 @@ gem "jquery-ui-rails"
 gem 'kaminari'
 gem 'ransack'
 
+
 group :production do
   gem 'rails_12factor'
 end

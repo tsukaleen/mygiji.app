@@ -11,7 +11,7 @@
       <ul class="list">
          <li><%= link_to '詳細', "/giji/#{giji.id}", class: 'list', method: :get %></li>
           <% if user_signed_in? && current_user.id == giji.user_id %>
-         <li><%= link_to '編集', "giji/#{giji.id}/edit", class: 'list', method: :get %></li>
+         <li><%= link_to '編集', "/giji/#{giji.id}/edit", class: 'list', method: :get %></li>
          <li><%= link_to '削除', "/giji/#{giji.id}", class: 'list', method: :delete %></li>
       </ul>
       <% end %>
